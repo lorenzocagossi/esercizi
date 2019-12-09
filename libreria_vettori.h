@@ -157,13 +157,13 @@ bool rimuoviElemento(float v[], int &n, int pos){
 
 void stampaVettore(float v[], int n){
 	for (int i=0; i<n; i++){
-		cout << v[i] << endl;
+		cout << v[i] << ",";
 	}
 }
 
 void stampaVettore(int v[], int n){
 	for (int i=0; i<n; i++){
-		cout << v[i] << endl;
+		cout << v[i] << ",";
 	}
 }
 
@@ -197,8 +197,8 @@ void ordinamentoIngenuo(float v[], int n, bool inverso = false){
 
 void bubbleSort(int v[], int n, bool inverso){
 	
-	for(int j=0; j<N-1 ;j++)
-		for(int i=0; i<N-1; i++)
+	for(int j=0; j<n-1 ;j++)
+		for(int i=0; i<n-1; i++)
 			if(v[i] > v[i+1] && inverso == false){
 				swap(v[i], v[i+1]);
 			}
@@ -209,8 +209,8 @@ void bubbleSort(int v[], int n, bool inverso){
 
 void bubbleSort(float v[], int n, bool inverso){
 	
-	for(int j=0; j<N-1 ;j++)
-		for(int i=0; i<N-1; i++)
+	for(int j=0; j<n-1 ;j++)
+		for(int i=0; i<n-1; i++)
 			if(v[i] > v[i+1] && inverso == false){
 				swap(v[i], v[i+1]);
 			}
