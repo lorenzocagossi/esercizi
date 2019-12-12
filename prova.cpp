@@ -5,14 +5,16 @@
 using namespace std;
 
 void stampaMenu(){
-	cout<<"0. Uscita"<<endl;
-	cout<<"1. Creazione random del vettore"<<endl;
-	cout<<"2. Stampa vettore"<<endl;
-	cout<<"3. Riordina il vettore"<<endl;
+	cout<<"1. Uscita"<<endl;
+	cout<<"2. visualizza il vettore"<<endl;
+	cout<<"3. Aumenta del 10% ogni elemento del vettore"<<endl;
+	cout<<"4. Mostra l'elemento massimo"<<endl;
+	cout<<"5. Mostra quante volte e' presente il numero maggiore"<<endl;
 }
 
 void menu(int v[], int n ){
 	int scelta;
+	int c;
 	do{
 		stampaMenu();
 
@@ -20,23 +22,37 @@ void menu(int v[], int n ){
 		cin>>scelta;
 
 		switch(scelta){
-			case 0:
+			case 1:
 				cout<<"uscita"<<endl;
 				cout<<endl;
 				break;
-			case 1:
-				riempiVettoreRandom(v,n);
-				break;
+
 			case 2:
 				stampaVettore(v,n);
 				cout<<endl;
 				break;
+
 			case 3:
-				ordinamentoIngenuo(v,n);
+				for(int i=0; i<n; i++){
+					v[i]+=(v[i]/10);
+				}
+				cout<<endl;
 				break;
+
 			case 4:
-				//cose
+				cout<<maggiore(v,n)<<endl;
 				break;
+
+			case 5:
+				c=0;
+				for(int i=0; i<n; i++){	
+					if (v[i]==minore(v,n)){
+						c++;
+					}
+				}
+				cout<<"il numero maggiore e' presente "<<c<<" volte"<<endl;
+				break;
+
 			default:
 				cout<<"opzione non valida"<<endl;
 				break;
@@ -53,12 +69,14 @@ int main(){
 	srand(time(NULL));
 	setDimensioneMax(10000);
 	setRandomMin(1);
-	setRandomMax(100);
+	setRandomMax(10);
+	
 
 	int n;
 	cout<<"quanto deve essere lungo il vettore?"<<endl;
 	cin>>n;
 	int v[n];
+	riempiVettoreRandom(v,n);
 	menu(v,n);
 
 }

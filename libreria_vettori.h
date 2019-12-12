@@ -157,13 +157,13 @@ bool rimuoviElemento(float v[], int &n, int pos){
 
 void stampaVettore(float v[], int n){
 	for (int i=0; i<n; i++){
-		cout << v[i] << ",";
+		cout << v[i] << " ";
 	}
 }
 
 void stampaVettore(int v[], int n){
 	for (int i=0; i<n; i++){
-		cout << v[i] << ",";
+		cout << v[i] << " ";
 	}
 }
 
