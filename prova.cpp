@@ -6,10 +6,13 @@ using namespace std;
 
 void stampaMenu(){
 	cout<<"1. Uscita"<<endl;
-	cout<<"2. visualizza il vettore"<<endl;
-	cout<<"3. Aumenta del 10% ogni elemento del vettore"<<endl;
-	cout<<"4. Mostra l'elemento massimo"<<endl;
-	cout<<"5. Mostra quante volte e' presente il numero maggiore"<<endl;
+	cout<<"2. visualizza il vettore."<<endl;
+	cout<<"3. Aumenta del 10% ogni elemento del vettore."<<endl;
+	cout<<"4. Mostra l'elemento massimo."<<endl;
+	cout<<"5. Mostra quante volte e' presente il numero maggiore."<<endl;
+	cout<<"6. Mostra gli elementi di indice pari."<<endl;
+	cout<<"7. Visualizza il vettore e specifica se pari o dispari."<<endl;
+
 }
 
 void menu(int v[], int n ){
@@ -50,7 +53,32 @@ void menu(int v[], int n ){
 						c++;
 					}
 				}
-				cout<<"il numero maggiore e' presente "<<c<<" volte"<<endl;
+				if (c==1){
+					cout<<"il numero maggiore e' presente "<<c<<" volta"<<endl;
+				}
+				else {
+					cout<<"il numero maggiore e' presente "<<c<<" volte"<<endl;
+				}
+				break;
+
+			case 6:
+				for(int i=0; i<n; i++){
+					if(i%2!=0){
+						cout<<v[i]<<" ";
+					}
+				}
+				cout<<endl;
+				break;
+
+			case 7:
+				for(int i=0; i<n; i++){
+					if(v[i]%2==0){
+						cout<<v[i]<<" --> pari"<<endl;
+					}
+					else{
+						cout<<v[i]<<" --> dispari"<<endl;
+					}
+				}
 				break;
 
 			default:
@@ -61,7 +89,7 @@ void menu(int v[], int n ){
 		cout<<endl;
 	}
 
-	while(scelta!=0);
+	while(scelta!=1);
 }
 
 
