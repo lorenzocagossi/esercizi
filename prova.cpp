@@ -5,6 +5,7 @@
 using namespace std;
 
 void stampaMenu(){
+	cout<<"0. Impostare i valori random min e random max (i predefiniti sono 1 e 10)"<<endl;
 	cout<<"1. Uscita"<<endl;
 	cout<<"2. visualizza il vettore."<<endl;
 	cout<<"3. Aumenta del 10% ogni elemento del vettore."<<endl;
@@ -12,12 +13,17 @@ void stampaMenu(){
 	cout<<"5. Mostra quante volte e' presente il numero maggiore."<<endl;
 	cout<<"6. Mostra gli elementi di indice pari."<<endl;
 	cout<<"7. Visualizza il vettore e specifica se pari o dispari."<<endl;
+	cout<<"8. Ordina il vettore dal piu' piccolo al piu' grande."<<endl;
+	cout<<"9. Ordina il vettore dal piu' grande al piu' piccolo."<<endl;
+
+
 
 }
 
 void menu(int v[], int n ){
-	int scelta;
-	int c;
+	int scelta, c;
+	int min=0;
+	int max=10;
 	do{
 		stampaMenu();
 
@@ -25,6 +31,17 @@ void menu(int v[], int n ){
 		cin>>scelta;
 
 		switch(scelta){
+			case 0:
+				cout<<"inserire il valore random min"<<endl;
+				cin>>min;
+				setRandomMin(min);
+				cout<<"inserire il valore random max"<<endl;
+				cin>>max;
+				setRandomMax(max);
+				riempiVettoreRandom(v,n);
+				cout<<endl;
+				break;
+
 			case 1:
 				cout<<"uscita"<<endl;
 				cout<<endl;
@@ -79,6 +96,14 @@ void menu(int v[], int n ){
 						cout<<v[i]<<" --> dispari"<<endl;
 					}
 				}
+				break;
+
+			case 8:
+				bubbleSort(v,n, false);
+				break;
+
+			case 9:
+				bubbleSort(v,n, true);
 				break;
 
 			default:
