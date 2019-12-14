@@ -1,6 +1,7 @@
 #include <iostream>
 #include "libreria_vettori.h"
 #include <time.h>
+#include <process.h>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ void stampaMenu(){
 	cout<<"7. Visualizza il vettore e specifica se pari o dispari."<<endl;
 	cout<<"8. Ordina il vettore dal piu' piccolo al piu' grande."<<endl;
 	cout<<"9. Ordina il vettore dal piu' grande al piu' piccolo."<<endl;
+	cout<<"10. Somma di tutti gli elementi del vettore"<<endl;
 
 
 
@@ -29,6 +31,7 @@ void menu(int v[], int n ){
 
 		cout<<"inserisci scelta"<<endl;
 		cin>>scelta;
+		system("cls");
 
 		switch(scelta){
 			case 0:
@@ -106,15 +109,20 @@ void menu(int v[], int n ){
 				bubbleSort(v,n, true);
 				break;
 
+			case 10:
+				cout<<"la somma degli elementi del vettore e' "<<sommaVettore(v,n)<<endl;
+				break;
+
 			default:
 				cout<<"opzione non valida"<<endl;
 				break;
 
 		}
 		cout<<endl;
-	}
 
+	}
 	while(scelta!=1);
+
 }
 
 
