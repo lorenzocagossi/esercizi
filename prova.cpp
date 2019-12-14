@@ -17,17 +17,20 @@ void stampaMenu(){
 	cout<<"8. Ordina il vettore dal piu' piccolo al piu' grande."<<endl;
 	cout<<"9. Ordina il vettore dal piu' grande al piu' piccolo."<<endl;
 	cout<<"10. Somma di tutti gli elementi del vettore"<<endl;
+	cout<<"11. Calcolare la media degli elementi del vettore"<<endl;
+	cout<<"12. Rimuovere un elemento dalla lista"<<endl;
 
 
 
 }
 
 void menu(int v[], int n ){
-	int scelta, c;
+	int scelta, c,x;
 	int min=0;
 	int max=10;
-	do{
+	do{	
 		stampaMenu();
+
 
 		cout<<"inserisci scelta"<<endl;
 		cin>>scelta;
@@ -103,14 +106,27 @@ void menu(int v[], int n ){
 
 			case 8:
 				bubbleSort(v,n, false);
+				stampaVettore(v,n);
 				break;
 
 			case 9:
 				bubbleSort(v,n, true);
+				stampaVettore(v,n);
 				break;
 
 			case 10:
 				cout<<"la somma degli elementi del vettore e' "<<sommaVettore(v,n)<<endl;
+				break;
+
+			case 11:
+				cout<<"la media degli elementi del vettore e' "<<media(v,n)<<endl;
+				break;
+
+			case 12:
+				cout<<endl<<"che elemento vuoi rimuovere dalla lista?"<<endl;
+				cin>>x;
+
+				rimuoviElemento(v,n,presente(v,n,x));
 				break;
 
 			default:
