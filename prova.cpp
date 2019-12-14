@@ -19,8 +19,7 @@ void stampaMenu(){
 	cout<<"10. Somma di tutti gli elementi del vettore"<<endl;
 	cout<<"11. Calcolare la media degli elementi del vettore"<<endl;
 	cout<<"12. Rimuovere un elemento dalla lista"<<endl;
-
-
+	cout<<"13. Aggiungere un elemento alla lista"<<endl;
 
 }
 
@@ -32,7 +31,7 @@ void menu(int v[], int n ){
 		stampaMenu();
 
 
-		cout<<"inserisci scelta"<<endl;
+		cout<<endl<<"inserisci scelta"<<endl;
 		cin>>scelta;
 		system("cls");
 
@@ -127,6 +126,12 @@ void menu(int v[], int n ){
 				cin>>x;
 
 				rimuoviElemento(v,n,presente(v,n,x));
+				break;
+
+			case 13:
+				cout<<"che elemento vuoi aggiungere alla lista?"<<endl;
+				aggiungiElemento(v,n);
+				cout<<endl;
 				break;
 
 			default:
