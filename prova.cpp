@@ -24,7 +24,7 @@ void stampaMenu(){
 }
 
 void menu(int v[], int n ){
-	int scelta, c,x;
+	int scelta,c,x;
 	int min=0;
 	int max=10;
 	do{	
