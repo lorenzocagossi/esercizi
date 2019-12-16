@@ -26,7 +26,7 @@ void menu(int v[], int n){
 		stampamenu();
 		cout<<"inserisci scelta"<<endl;
 		cin>>scelta;
-		//system("cls");
+		system("cls");
 
 		switch(scelta){
 			case 1:
